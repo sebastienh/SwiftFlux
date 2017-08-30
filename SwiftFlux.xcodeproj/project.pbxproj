@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1980A51F5762E800B8E2FA /* Result.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1980A41F5762E800B8E2FA /* Result.framework.dSYM */; };
 		CA1C3FEC1B791CA20048126F /* ActionCreatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1C3FEA1B7919390048126F /* ActionCreatorSpec.swift */; };
 		CA1C3FED1B791CA30048126F /* ActionCreatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1C3FEA1B7919390048126F /* ActionCreatorSpec.swift */; };
 		CA37943C1B6F65BA000AE5F2 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CAEF5DB51B6D3951005684E2 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -39,7 +40,6 @@
 		CAEEE11A1BFDBB2A000C1B09 /* ReduceStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEAF03E1BFBA4EB0021CC66 /* ReduceStoreSpec.swift */; };
 		CAEEE11B1BFDC3C5000C1B09 /* ReduceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEAF03B1BFB97DF0021CC66 /* ReduceStore.swift */; };
 		CAEF4EC21B6D3296005684E2 /* SwiftFlux.h in Headers */ = {isa = PBXBuildFile; fileRef = CACC47FA1B6B9DDA00FDF2BF /* SwiftFlux.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAEF5DAF1B6D374D005684E2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEF56D81B6D36D3005684E2 /* Result.framework */; };
 		CAEF5DBD1B6D3989005684E2 /* DispatcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF5DBA1B6D3989005684E2 /* DispatcherSpec.swift */; };
 		CAEF5DBE1B6D3989005684E2 /* DispatcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF5DBA1B6D3989005684E2 /* DispatcherSpec.swift */; };
 		CAEF5DBF1B6D3A5C005684E2 /* SwiftFlux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC47F51B6B9DDA00FDF2BF /* SwiftFlux.framework */; };
@@ -135,6 +135,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E1980A41F5762E800B8E2FA /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/Mac/Result.framework.dSYM; sourceTree = "<group>"; };
 		CA1C3FEA1B7919390048126F /* ActionCreatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCreatorSpec.swift; sourceTree = "<group>"; };
 		CA3159FB1B6D2FB5004A8F2C /* SwiftFlux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftFlux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA315A051B6D2FB5004A8F2C /* SwiftFluxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftFluxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAEF5DAF1B6D374D005684E2 /* Result.framework in Frameworks */,
+				0E1980A51F5762E800B8E2FA /* Result.framework.dSYM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +233,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EFD78321F57602E006B583D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E1980A41F5762E800B8E2FA /* Result.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA70C3521BFF82AA00EABF70 /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +306,7 @@
 				CAEF56CD1B6D36D3005684E2 /* Carthage */,
 				CACA8E3A1B6CD85F00F051B8 /* DemoApp */,
 				CACC47F61B6B9DDA00FDF2BF /* Products */,
+				0EFD78321F57602E006B583D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -790,13 +800,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.mog2dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -819,12 +829,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.mog2dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
@@ -962,12 +972,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx10.13;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1009,11 +1019,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx10.13;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
