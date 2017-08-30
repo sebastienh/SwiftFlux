@@ -17,14 +17,14 @@ class ReduceStoreSpec: QuickSpec {
             typealias Payload = Int
             let number: Int
             func invoke(dispatcher: Dispatcher) {
-                dispatcher.dispatch(self, result: Result(value: number))
+                dispatcher.dispatch(action: self, result: Result(value: number))
             }
         }
         struct Minus: Action {
             typealias Payload = Int
             let number: Int
             func invoke(dispatcher: Dispatcher) {
-                dispatcher.dispatch(self, result: Result(value: number))
+                dispatcher.dispatch(action: self, result: Result(value: number))
             }
         }
     }
@@ -33,16 +33,16 @@ class ReduceStoreSpec: QuickSpec {
         init() {
             super.init(initialState: 0)
 
-            self.reduce(CalculateActions.Plus.self) { (state, result) -> Int in
+            self.reduce(type: CalculateActions.Plus.self) { (state, result) -> Int in
                 switch result {
-                case .Success(let number): return state + number
+                case .success(let number): return state + number
                 default: return state
                 }
             }
 
-            self.reduce(CalculateActions.Minus.self) { (state, result) -> Int in
+            self.reduce(type: CalculateActions.Minus.self) { (state, result) -> Int in
                 switch result {
-                case .Success(let number): return state - number
+                case .success(let number): return state - number
                 default: return state
                 }
             }
@@ -65,10 +65,10 @@ class ReduceStoreSpec: QuickSpec {
         })
 
         it("should calculate state with number") {
-            ActionCreator.invoke(CalculateActions.Plus(number: 3))
-            ActionCreator.invoke(CalculateActions.Plus(number: 3))
-            ActionCreator.invoke(CalculateActions.Minus(number: 2))
-            ActionCreator.invoke(CalculateActions.Minus(number: 1))
+            ActionCreator.invoke(action: CalculateActions.Plus(number: 3))
+            ActionCreator.invoke(action: CalculateActions.Plus(number: 3))
+            ActionCreator.invoke(action: CalculateActions.Minus(number: 2))
+            ActionCreator.invoke(action: CalculateActions.Minus(number: 1))
 
             expect(results.count).to(equal(4))
             expect(results[0]).to(equal(3))

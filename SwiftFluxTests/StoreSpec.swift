@@ -75,7 +75,7 @@ class StoreSpec: QuickSpec {
 
                 results = []
 
-                store1.unsubscribe(token)
+                store1.unsubscribe(listenerToken: token)
                 store1.emitChange()
                 expect(results.count).to(equal(0))
                 expect(results).toNot(contain("store1"))

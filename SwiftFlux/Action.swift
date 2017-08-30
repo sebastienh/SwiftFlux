@@ -11,7 +11,7 @@ import Result
 
 public protocol Action {
     associatedtype Payload
-    associatedtype ErrorType: Error
+    associatedtype ErrorType: Error = NSError
     func invoke(dispatcher: Dispatcher)
 }
 
