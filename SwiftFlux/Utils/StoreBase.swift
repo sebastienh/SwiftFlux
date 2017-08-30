@@ -13,6 +13,7 @@ open class StoreBase: Store {
 
     public init() {}
 
+    @discardableResult
     public func register<T: Action>(type: T.Type, handler: @escaping (Result<T.Payload, T.ErrorType>) -> ()) -> DispatchToken {
         let dispatchToken = ActionCreator.dispatcher.register(type: type) { (result) -> () in
             handler(result)

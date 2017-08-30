@@ -20,6 +20,7 @@ open class ReduceStore<T: Equatable>: StoreBase {
         return internalState ?? initialState
     }
 
+    @discardableResult
     public func reduce<A: Action>(type: A.Type, reducer: @escaping (T, Result<A.Payload, A.ErrorType>) -> T) -> DispatchToken {
         return self.register(type: type) { (result) in
             let startState = self.state

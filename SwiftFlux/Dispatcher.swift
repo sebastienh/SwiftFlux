@@ -37,6 +37,7 @@ public class DefaultDispatcher: Dispatcher {
         dispatch(type: type(of: action), result: result)
     }
 
+    @discardableResult
     public func register<T: Action>(type: T.Type, handler: @escaping (Result<T.Payload, T.ErrorType>) -> Void) -> DispatchToken {
         let nextDispatchToken = NSUUID().uuidString
         callbacks[nextDispatchToken] = DispatchCallback<T>(type: type, handler: handler)

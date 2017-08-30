@@ -25,6 +25,7 @@ extension Store {
         return eventEmitter
     }
 
+    @discardableResult
     public func subscribe(handler: @escaping () -> ()) -> StoreListenerToken {
         return eventEmitter.subscribe(store: self, handler: handler)
     }
@@ -58,6 +59,7 @@ public class DefaultEventEmitter: EventEmitter {
         eventListeners.removeAll()
     }
 
+    @discardableResult
     public func subscribe<T: Store>(store: T, handler: @escaping () -> ()) -> StoreListenerToken {
         let nextListenerToken = NSUUID().uuidString
         eventListeners[nextListenerToken] = EventListener(store: store, handler: handler)
